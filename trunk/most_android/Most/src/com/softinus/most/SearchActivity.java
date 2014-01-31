@@ -33,6 +33,9 @@ public class SearchActivity extends FragmentActivity implements	ActionBar.TabLis
 	 */
 	ViewPager mViewPager;
 	
+	boolean bAdjSelected= false;	// 형용사 선택
+	boolean bNounSelected= false;	// 명사 선택
+	
 
 
 	@Override
@@ -43,6 +46,8 @@ public class SearchActivity extends FragmentActivity implements	ActionBar.TabLis
         ActivitySplitAnimationUtil.prepareAnimation(this);
 
         setContentView(R.layout.activity_search);
+        
+        this.setTitle("세상에서 가장 OO한 OO는?");
 
         // Animating the items to be open, revealing the new activity
         ActivitySplitAnimationUtil.animate(this, 500);
