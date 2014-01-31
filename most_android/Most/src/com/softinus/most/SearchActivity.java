@@ -144,7 +144,21 @@ public class SearchActivity extends FragmentActivity implements	ActionBar.TabLis
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a DummySectionFragment (defined as a static inner class
 			// below) with the page number as its lone argument.
-			Fragment fragment = new Item1_Fragment();
+			
+			Fragment fragment= null;
+			if(position == 0)
+			{
+				fragment = new Item1_Fragment();
+			}
+			else if (position == 1)
+			{
+				fragment = new Item1_Fragment();
+				//fragment = new Item2_Fragment();
+			}
+			else
+			{
+			}
+			
 			Bundle args = new Bundle();
 			//args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
 			fragment.setArguments(args);

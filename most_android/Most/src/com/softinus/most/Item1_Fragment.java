@@ -12,7 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import com.softinus.most.dummy.DummyContent;
+import com.softinus.most.dummy.AdjectiveContent;
+import com.softinus.most.dummy.AdjectiveContent.AdjectiveItem;
 
 /**
  * A fragment representing a list of Items.
@@ -75,20 +76,18 @@ public class Item1_Fragment extends Fragment implements
 		}
 
 		// TODO: Change Adapter to display your content
-		mAdapter = new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-				android.R.layout.simple_list_item_1, android.R.id.text1,
-				DummyContent.ITEMS);
+		mAdapter = new ArrayAdapter<AdjectiveContent.AdjectiveItem>(getActivity(),
+				android.R.layout.simple_list_item_1, android.R.id.text1, AdjectiveContent.ITEMS);
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+			Bundle savedInstanceState)
+	{
 		View view = inflater.inflate(R.layout.fragment_item, container, false);
 
 		// Set the adapter
 		mListView = (AbsListView) view.findViewById(android.R.id.list);
-		//mListView.setTextAlignment(ALIGN_CENTER)
-		//mListView = (AbsListView) view.findViewById(R.id.list1);
 		((AdapterView<ListAdapter>) mListView).setAdapter(mAdapter);
 
 		// Set OnItemClickListener so we can be notified on item clicks
@@ -123,7 +122,7 @@ public class Item1_Fragment extends Fragment implements
 			// Notify the active callbacks interface (the activity, if the
 			// fragment is attached to one) that an item has been selected.
 			mListener
-					.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
+					.onFragmentInteraction(AdjectiveContent.ITEMS.get(position).id);
 		}
 		
 		String strTitle1="세상에서 가장 ";
@@ -155,6 +154,7 @@ public class Item1_Fragment extends Fragment implements
 			thisActivity.setTitle(strTitle1+"값싼");
 			break;
 		}
+		thisActivity.bAdjSelected= true;
 	}
 
 	/**
