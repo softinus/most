@@ -116,12 +116,44 @@ public class Item1_Fragment extends Fragment implements
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
-			long id) {
-		if (null != mListener) {
+			long id)
+	{
+		if (null != mListener)
+		{
 			// Notify the active callbacks interface (the activity, if the
 			// fragment is attached to one) that an item has been selected.
 			mListener
 					.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
+		}
+		
+		String strTitle1="세상에서 가장 ";
+		SearchActivity thisActivity= (SearchActivity) getActivity();
+		switch(position)
+		{
+		case 0:			
+			thisActivity.setTitle(strTitle1+"빠른");
+			break;
+		case 1:			
+			thisActivity.setTitle(strTitle1+"높은(큰)");
+			break;
+		case 2:			
+			thisActivity.setTitle(strTitle1+"무거운");
+			break;
+		case 3:			
+			thisActivity.setTitle(strTitle1+"비싼");
+			break;
+		case 4:			
+			thisActivity.setTitle(strTitle1+"느린");
+			break;
+		case 5:			
+			thisActivity.setTitle(strTitle1+"낮은(작은)");
+			break;
+		case 6:			
+			thisActivity.setTitle(strTitle1+"가벼운");
+			break;
+		case 7:			
+			thisActivity.setTitle(strTitle1+"값싼");
+			break;
 		}
 	}
 
